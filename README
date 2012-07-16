@@ -1,0 +1,20 @@
+ARCHER
+======
+
+archer is my personal additions to the standard library. as i learn
+common lisp, i imagine this will change drastically and i think it
+will be interesting to see how this evolves.
+
+
+FAST INSTALL
+============
+
+1. git clone https://github.com/kisom/cl-archer.git ~/.archer
+2. add the following to your ~/.sbclrc
+    ;;; load the archer library
+    (let ((archer-init (merge-pathnames ".archer/init.lisp"
+                                        (user-homedir-pathname))))
+       (when (probe-file archer-init)
+         (format t "loaded archer~%")
+         (load archer-init)))
+3. fire up sbcl!
