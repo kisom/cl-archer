@@ -1,8 +1,8 @@
 ;;;; archer: files.lisp
 ;;; macros for dealing with files
 
-(defmacro file->var (filename var)
+(defmacro def<-file (global-var filename)
   "Read the filename specified into the var."
     `(with-open-file (in ,filename)
        (with-standard-io-syntax
-         (setf ,var (read in)))))
+         (defparameter ,global-var (read in)))))
