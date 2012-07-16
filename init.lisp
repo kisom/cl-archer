@@ -4,7 +4,8 @@
 ;;;
 ;;; all this file does is load other files from archer here.
 
-(defparameter *archer-base* "/Users/kyle/code/archer")
+(defparameter *archer-base* (merge-pathnames ".archer"
+                                             (user-homedir-pathname)))
 
 (defmacro archer-load (filename)
   `(format t "-> LOADING ~A: ~:[FAIL~;ok~]~%"
