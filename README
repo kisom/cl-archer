@@ -10,11 +10,13 @@ FAST INSTALL
 ============
 
 1. git clone https://github.com/kisom/cl-archer.git ~/.archer
-2. add the following to your ~/.sbclrc
+2. add the following to your ~/.sbclrc or ~/.cmucl-init.lisp
     ;;; load the archer library
     (let ((archer-init (merge-pathnames ".archer/init.lisp"
                                         (user-homedir-pathname))))
        (when (probe-file archer-init)
          (format t "loaded archer~%")
          (load archer-init)))
-3. fire up sbcl!
+3. fire up sbcl or cmucl!
+
+i haven't tried this on any other implementations.
