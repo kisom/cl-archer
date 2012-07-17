@@ -6,6 +6,7 @@
 
 (defparameter *archer-base* (merge-pathnames ".archer"
                                              (user-homedir-pathname)))
+(defparameter *archer-files* '("files"))
 
 (defmacro archer-load (filename)
   `(format t "-> LOADING ~A: ~:[FAIL~;ok~]~%"
@@ -13,8 +14,6 @@
            (load (format nil "~A/~A.lisp"
                          *archer-base*
                          ,filename))))
-
-(defparameter *archer-files* '("files"))
 
 (dolist (file-target *archer-files*)
   (archer-load file-target))
