@@ -14,3 +14,14 @@
                         :if-exists :supersede)
      (with-standard-io-syntax
        (print ,sym out))))
+
+(defun install-image (image-path toplevel)
+  (if (stringp image-path)
+      (progn
+        (format t "[+] writing to ~A~%" (pathname image-path))
+        (sb-ext:save-lisp-and-die (pathname image-path)
+                                  :executable t
+                                  :toplevel toplevel))
+      (progn
+        (format t "~%~%[!] invalid image name!~%")
+        (sb-ext:quit :unix-status 1))))
