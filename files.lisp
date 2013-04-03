@@ -24,4 +24,4 @@
                                   :toplevel toplevel))
       (progn
         (format t "~%~%[!] invalid image name!~%")
-        (sb-ext:quit :unix-status 1))))
+        (sb-ext:exit :code 1))))
